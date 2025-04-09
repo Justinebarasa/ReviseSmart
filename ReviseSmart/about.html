@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ReviseSmart - Learn Smart, Succeed Bright</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #c8e6c9, #e8f5e9); /* Matches Home hero */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #4a90e2;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+
+        .about-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .about-section h1 {
+            color: #4a90e2;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-section h2 {
+            color: #333;
+            font-size: 24px;
+            margin: 30px 0 15px;
+        }
+
+        .about-section p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0 40px 20px;
+        }
+
+        .features-list li {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+        }
+
+        .team-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .contact-box {
+            text-align: center;
+            background-color: #e6f0fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contact-box a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-box a:hover {
+            color: #357abd;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .about-section h1 { font-size: 28px; }
+            .about-section h2 { font-size: 20px; }
+            .about-section p { font-size: 14px; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="My Website Logo" width="150" height="auto">
+            ReviseSmart
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <h1>About ReviseSmart</h1>
+        <p>Hey there, fellow students! Welcome to ReviseSmart – your friendly, go-to website for high school revision. We’re all about making studying less stressful and more effective, so you can ace those exams and feel great about it!</p>
+
+        <h2>Our Mission</h2>
+        <p>At ReviseSmart, our mission is simple: to empower high school students like you with the tools, resources, and confidence to succeed. We believe that learning should be smart, fun, and tailored to your needs – because when you study smarter, you shine brighter!</p>
+
+        <h2>Why Choose ReviseSmart?</h2>
+        <ul class="features-list">
+            <li>Easy-to-understand notes and study guides</li>
+            <li>Loads of past papers to practice with</li>
+            <li>Resources designed by students, for students</li>
+            <li>Everything you need, all in one place</li>
+        </ul>
+
+        <h2>Meet the Team</h2>
+        <div class="team-box">
+            <p>We’re a dedicated team of passionate individuals who’ve teamed up to create ReviseSmart just for you! None of us are students anymore, but we remember the high school grind all too well – the late nights, the tough exams, and the need for great resources. That’s why we’ve built this site to help you study smarter and succeed brighter, with all the tools we wish we’d had back in the day!</p>
+        </div>
+
+        <div class="contact-box">
+            <h2>Got Questions?</h2>
+            <p>Feel free to reach out! Drop us an email at <a href="mailto:support@revisesmart.com">support@revisesmart.com</a>, and we’ll get back to you as soon as we can.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 ReviseSmart. Made with ❤️ for students, by a dedicated team.</p>
+    </footer>
+
+    <script>
+        // Check login status and redirect if not logged in
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

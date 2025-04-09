@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviseSmart - Learn Smart, Succeed Bright</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #e8f5e9; /* Soft green */
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #4a90e2;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a, .nav-links button {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links button:hover {
+            color: #4a90e2;
+        }
+
+        .nav-links a#home-link, .nav-links button#signup-btn, .nav-links button#login-btn {
+            font-weight: 600; /* Bold for Home, Sign Up, and Log In */
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #c8e6c9, #e8f5e9); /* Hero gradient */
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #357abd;
+        }
+
+        .subjects {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none; /* Hidden by default */
+        }
+
+        .subjects.active {
+            display: block; /* Shown when logged in */
+        }
+
+        .subjects h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .subject-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .subject-card img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .subject-card h3 {
+            font-size: 18px;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        .subject-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #c8e6c9, #e8f5e9); /* Matches hero background */
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .modal-content button {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #357abd;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .toggle-form a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .nav-links { gap: 10px; }
+            .nav-links a, .nav-links button { font-size: 14px; }
+            .subjects h2 { font-size: 24px; }
+            .subject-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="My Website Logo" width="150" height="auto">
+            ReviseSmart
+        </div>
+        <div class="nav-links">
+            <a href="index.html" id="home-link">Home</a>
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Log In</button>
+            <button id="logout-btn" style="display: none;">Log Out</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>ReviseSmart</h1>
+        <p>Learn Smart, Succeed Bright. Create an account to access our amazing resources!</p>
+        <button class="cta-button" id="cta-signup">Get Started</button>
+    </section>
+
+    <section class="subjects">
+        <h2>Explore Subjects</h2>
+        <div class="subject-grid">
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="Math Icon">
+                <h3>Math</h3>
+                <p>Access notes, past papers, and study guides for Mathematics.</p>
+            </div>
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="English Icon">
+                <h3>English</h3>
+                <p>Improve your English with our comprehensive resources.</p>
+            </div>
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="Biology Icon">
+                <h3>Biology</h3>
+                <p>Dive into Biology with detailed notes and practice papers.</p>
+            </div>
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="Chemistry Icon">
+                <h3>Chemistry</h3>
+                <p>Master Chemistry with our curated study materials.</p>
+            </div>
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="History Icon">
+                <h3>History</h3>
+                <p>Explore History with engaging resources and past papers.</p>
+            </div>
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/50" alt="Physics Icon">
+                <h3>Physics</h3>
+                <p>Understand Physics with clear notes and practice questions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-signup">×</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="signup-name">Name</label>
+                <input type="text" id="signup-name" placeholder="Enter your name" required>
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Create a password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="toggle-form">Already have an account? <a href="#" id="show-login">Log In</a></p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login">×</span>
+            <h2>Log In</h2>
+            <form id="login-form">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="toggle-form">Need an account? <a href="#" id="show-signup">Sign Up</a></p>
+            <p class="forgot-password"><a href="#" id="forgot-password">Forgot Password?</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Elements
+        const signupBtn = document.getElementById('signup-btn');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const ctaSignup = document.getElementById('cta-signup');
+        const signupModal = document.getElementById('signup-modal');
+        const loginModal = document.getElementById('login-modal');
+        const closeSignup = document.getElementById('close-signup');
+        const closeLogin = document.getElementById('close-login');
+        const signupForm = document.getElementById('signup-form');
+        const loginForm = document.getElementById('login-form');
+        const showLogin = document.getElementById('show-login');
+        const showSignup = document.getElementById('show-signup');
+        const forgotPassword = document.getElementById('forgot-password');
+        const subjectsSection = document.querySelector('.subjects');
+
+        // Check login status (simulated with localStorage)
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        // Update UI based on login status
+        function updateUI() {
+            if (isLoggedIn) {
+                subjectsSection.classList.add('active');
+                signupBtn.style.display = 'none';
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'inline';
+                ctaSignup.style.display = 'none';
+            } else {
+                subjectsSection.classList.remove('active');
+                signupBtn.style.display = 'inline';
+                loginBtn.style.display = 'inline';
+                logoutBtn.style.display = 'none';
+                ctaSignup.style.display = 'inline';
+            }
+        }
+
+        updateUI();
+
+        // Modal controls
+        signupBtn.onclick = () => signupModal.classList.add('active');
+        loginBtn.onclick = () => loginModal.classList.add('active');
+        ctaSignup.onclick = () => signupModal.classList.add('active');
+        closeSignup.onclick = () => signupModal.classList.remove('active');
+        closeLogin.onclick = () => loginModal.classList.remove('active');
+        showLogin.onclick = (e) => {
+            e.preventDefault();
+            signupModal.classList.remove('active');
+            loginModal.classList.add('active');
+        };
+        showSignup.onclick = (e) => {
+            e.preventDefault();
+            loginModal.classList.remove('active');
+            signupModal.classList.add('active');
+        };
+
+        // Simulated signup
+        signupForm.onsubmit = (e) => {
+            e.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            isLoggedIn = true;
+            signupModal.classList.remove('active');
+            updateUI();
+            alert('Account created! Welcome to ReviseSmart!');
+        };
+
+        // Simulated login
+        loginForm.onsubmit = (e) => {
+            e.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            isLoggedIn = true;
+            loginModal.classList.remove('active');
+            updateUI();
+            alert('Logged in successfully!');
+        };
+
+        // Logout
+        logoutBtn.onclick = () => {
+            localStorage.setItem('isLoggedIn', 'false');
+            isLoggedIn = false;
+            updateUI();
+            alert('Logged out successfully!');
+        };
+
+        // Simulated forgot password (placeholder)
+        forgotPassword.onclick = (e) => {
+            e.preventDefault();
+            alert('Forgot Password feature coming soon! Please contact support@revisesmart.com for now.');
+        };
+    </script>
+</body>
+</html>

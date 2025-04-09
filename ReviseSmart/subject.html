@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects - ReviseSmart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #c8e6c9, #e8f5e9); /* Matches Home hero */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c6e49;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2c6e49;
+        }
+
+        .subjects-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .subjects-section h1 {
+            color: #2c6e49;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subjects-section .intro {
+            color: #666;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .subject-category {
+            margin-bottom: 40px;
+        }
+
+        .subject-category h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #d4a5a5;
+            padding-bottom: 5px;
+        }
+
+        .subject-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .subject-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subject-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subject-item a {
+            text-decoration: none;
+            color: #2c6e49;
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .subject-item a:hover {
+            color: #d4a5a5;
+        }
+
+        .note {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 40px;
+            background-color: #e6f0fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .subjects-section h1 { font-size: 28px; }
+            .subjects-section .intro { font-size: 14px; }
+            .subject-category h2 { font-size: 20px; }
+            .subject-item a { font-size: 16px; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="My Website Logo" width="150" height="auto">
+            ReviseSmart
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="subjects-section">
+        <h1>Explore Your Subjects</h1>
+        <p class="intro">Hey there! Ready to dive into your revision? Pick a subject below that fits your Kenyan high school curriculum and get started with resources tailored just for you. Let’s make studying simple and fun!</p>
+
+        <div class="subject-category">
+            <h2>Core Subjects</h2>
+            <div class="subject-list">
+                <div class="subject-item"><a href="subjects/english.html">English</a></div>
+                <div class="subject-item"><a href="subjects/kiswahili.html">Kiswahili</a></div>
+                <div class="subject-item"><a href="subjects/mathematics.html">Mathematics</a></div>
+            </div>
+        </div>
+
+        <div class="subject-category">
+            <h2>Sciences</h2>
+            <div class="subject-list">
+                <div class="subject-item"><a href="subjects/biology.html">Biology</a></div>
+                <div class="subject-item"><a href="subjects/chemistry.html">Chemistry</a></div>
+                <div class="subject-item"><a href="subjects/physics.html">Physics</a></div>
+            </div>
+        </div>
+
+        <div class="subject-category">
+            <h2>Humanities</h2>
+            <div class="subject-list">
+                <div class="subject-item"><a href="subjects/history.html">History & Government</a></div>
+                <div class="subject-item"><a href="subjects/geography.html">Geography</a></div>
+                <div class="subject-item"><a href="subjects/cre.html">Christian Religious Education (CRE)</a></div>
+                <div class="subject-item"><a href="subjects/ire.html">Islamic Religious Education (IRE)</a></div>
+            </div>
+        </div>
+
+        <div class="subject-category">
+            <h2>Technical & Applied Subjects</h2>
+            <div class="subject-list">
+                <div class="subject-item"><a href="subjects/agriculture.html">Agriculture</a></div>
+                <div class="subject-item"><a href="subjects/business.html">Business Studies</a></div>
+                <div class="subject-item"><a href="subjects/computer.html">Computer Studies</a></div>
+                <div class="subject-item"><a href="subjects/home-science.html">Home Science</a></div>
+            </div>
+        </div>
+
+        <p class="note">We’re working hard to add more subjects and resources regularly, so keep checking back for updates!</p>
+    </section>
+
+    <footer>
+        <p>© 2025 ReviseSmart. Made with ❤️ for Kenyan students.</p>
+    </footer>
+
+    <script>
+        // Check login status and redirect if not logged in
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
